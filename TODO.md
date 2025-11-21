@@ -13,11 +13,13 @@ Avant de commencer, adoptez un raisonnement modulaire et itératif : commencez p
    - **Dossier/Fichier** : prisma/schema.prisma (nouveau fichier).
    - **Raisonnement** : Définissez le schéma DB (modèles User, Product, Order). Piste : Réfléchissez aux relations (User hasMany Orders, Product belongsTo Category).
    - **Fonctions/Exports/Imports/Méthodes** : Exportez le schéma avec generator client et datasource db (SQLite). Méthodes : Définir modèles avec champs (id, name, etc.), relations.
+   - **Statut** : [x] Terminé - Schéma défini avec modèles User, Category, Product, Order, OrderItem et relations.
 
 ## 3. Initialisation de la Base de Données
    - **Dossier/Fichier** : prisma/migrations/ (généré), lib/prisma.js (nouveau).
    - **Raisonnement** : Créez une instance PrismaClient globale pour éviter les reconnexions. Piste : Utilisez un singleton pour performance.
    - **Fonctions/Exports/Imports/Méthodes** : Dans lib/prisma.js, importez { PrismaClient } from '@prisma/client', exportez une fonction getPrismaClient() qui retourne une instance unique. Méthode : prisma.user.findMany(), etc.
+   - **Statut** : [x] Terminé - Instance PrismaClient créée, migration initiale appliquée, client généré.
 
 ## 4. Authentification avec NextAuth
    - **Dossier/Fichier** : app/api/auth/[...nextauth]/route.js (nouveau), lib/auth.js (nouveau).
